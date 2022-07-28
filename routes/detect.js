@@ -6,6 +6,7 @@ const router = express.Router();
 router.get('/', function(req, res, next) {
   const userAgent = req.get('User-Agent')
   log('userAgent::', userAgent)
+  log('headers::', req.headers)
   res.render('detect', {
     title: userAgent || 'Detect Page',
     body: userAgent || 'undefined',
